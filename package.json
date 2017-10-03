@@ -25,5 +25,9 @@
     "eslint-plugin-react": "^3.2.3",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0"
   }
 }
