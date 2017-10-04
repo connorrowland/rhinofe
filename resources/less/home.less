@@ -1,4 +1,20 @@
 @import "./variables.less";
+.section-wave{
+  width: 100%;
+  height: auto;
+}
+.section-wave--desktop{
+  display: block;
+  @media (max-width: 575px) {
+    display: none;
+  }
+}
+.section-wave--mobile{
+  display: none;
+  @media (max-width: 575px) {
+    display: block;
+  }
+}
 .home--introduction,.home--how-it-works,.home--faq,.home--press,.home--get-started{
   margin-top: 150px;
   margin-bottom: 150px;
@@ -73,6 +89,15 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-image: url("/images/Header_Background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  background-position-y: 110%;
+  @media (max-width: 992px) {
+    background-image: none;
+    min-height: initial;
+  }
   #header--city-left{
     max-width: 652px;
     height: auto;
@@ -162,6 +187,12 @@
     }
   }
 }
+.home--how-it-works{
+  background-color: #F7FEFF;
+  margin-bottom: 0;
+  padding-bottom: 60px;
+  margin-top: 0;
+}
 .how-it-works--steps{
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,48 +202,109 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.steps--step1{
+  max-width: 540px;
+  p{
+    margin-left: 70px;
+    @media (max-width: 575px) {
+      margin-left: 45px;
+    }
+  }
+}
+.steps--step2{
+  max-width: 580px;
+  p{
+    margin-right: 100px;
+    @media (max-width: 575px) {
+      margin-right: 45px;
+    }
+  }
+}
+.steps--step3{
+  max-width: 580px;
+  p{
+    margin-left: 120px;
+    @media (max-width: 575px) {
+      margin-left: 45px;
+    }
+  }
+}
 .steps--step1, .steps--step3{
   text-align: right;
   margin-left: auto;
+}
+.steps--step1,.steps--step2,.steps--step3{
+  position: relative;
+  @media (max-width: 575px) {
+    margin-bottom: 40px;
+  }
+  .steps--title{
+    position: relative;
+    z-index: 10;
+  }
+}
+.steps--step3{
+  margin-bottom: 0;
+}
+.steps--background-number-1{
+  top: 40px;
+  left: 145px;
+}
+.steps--background-number-2{
+  top: 35px;
+  right: 135px;
+}
+.steps--background-number-3{
+  top: 20px;
+  left: 20px;
+}
+.steps--background-number{
+  position: absolute;
+  z-index: 1;
+  h1{
+    font-size: 220px;
+    color: @light_turquoise;
+    @media (max-width: 575px) {
+      font-size: 164px;
+    }
+  }
+}
+.hiw-faw--intersection-wave{
+  position: relative;
+}
+.home--faq{
+  background-color: #FFFBF7;
+  margin-top: 0;
+  position: relative;
+  top: -3px;
+  margin-bottom: 0;
+}
+.faq--bottom-wave{
+  position: relative;
+  top: -6px;
 }
 .faq--intro-text{
   h2{
     color: @dkblue;
   }
-}
-.faq--trios{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin-top: 72px;
-  max-width: 1111px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 60px;
 }
 .faq--trio-item{
   text-align: left;
-  max-width: 361px;
 }
 .faq--trio-heading{
   font-size: 22px;
   letter-spacing: 0.34px;
   line-height: 36px;
   margin-bottom: 30px;
+  margin-right: 50px;
   @media (max-width: 575px) {
     margin-bottom: 20px;
   }
+}
+.home--press{
+  margin-top: 75px;
+  margin-bottom: 75px;
 }
 .press--logo-trio{
   display: -webkit-box;
@@ -246,6 +338,12 @@
     width: 204px;
     height: 55px;
   }
+}
+.home--get-started{
+  margin-top: 0;
+  background-color: #F7FEFF;
+  padding-bottom: 150px;
+  margin-bottom: 0;
 }
 .get-started--more-info{
   display: -webkit-box;
@@ -291,6 +389,9 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 40px;
 }
 .signupForm--container{
   max-width: 600px;
@@ -311,6 +412,9 @@
 }
 .error-message--text-input{
   color: @red_error;
+}
+.home--pre-footer-graphic{
+  background-color: #F7FEFF;
 }
 #pre-footer-graphic{
   max-width: 100%;
