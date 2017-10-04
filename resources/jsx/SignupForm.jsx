@@ -15,7 +15,8 @@ class SignupForm extends React.Component {
         full_name: '',
         company_name: '',
         email: '',
-        phone_number: ''
+        phone_number: '',
+        showError: false
       }
     }
 
@@ -49,35 +50,58 @@ class SignupForm extends React.Component {
       this.setState({
         [event.target.id]: event.target.value
       })
+      if(event.target.id == "email"){
+        this.validateEmail(event.target.value);
+      }
     }
 
     validateEmail(email){
-      var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.com$/;
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if(re.test(email)){
         this.setState({
-          formValid: true
+          formValid: true,
+          showError: false
+        })
+      } else {
+        this.setState({
+          formValid: false,
+          showError: true
         })
       }
     }
 
+    handleFocus(e){
+      console.log(e);
+      console.log("focus");
+    }
+
+    showError(){
+      return (
+        <p className="error-message--text-input">Please enter a valid email.</p>
+      )
+    }
+
     render() {
         var validFormClasses = this.state.formValid ? "dkblue-button-enabled" : "dkblue-button-disabled";
+        var errorMessage = this.state.showError ? this.showError() : null;
+        var errorFormClass = this.state.showError ? "form-control text-input--error" : "form-control";
         return (
             <div className="container signupForm--container">
               <form>
                 <div className="form-group">
-                  <input type="text" className="form-control" id="full_name" placeholder="Full name (optional)"/>
+                  <input type="text" className="form-control" id="full_name" placeholder="Full name (optional)" onChange={this.handleFormChange}/>
                 </div>
                 <div className="form-group">
-                  <input type="text" className="form-control" id="company_name" placeholder="Company name (optional)"/>
+                  <input type="text" className="form-control" id="company_name" placeholder="Company name (optional)" onChange={this.handleFormChange}/>
                 </div>
                 <div className="form-group">
-                  <input type="email" className="form-control" id="email" placeholder="Enter email" onChange={this.validateEmail}/>
+                  {errorMessage}
+                  <input type="email" className={errorFormClass} id="email" placeholder="Enter email" onFocus={this.handleFocus} onChange={this.handleFormChange}/>
                 </div>
                 <div className="form-group">
-                  <input type="text" className="form-control" id="phone_number" placeholder="Phone number (optional)"/>
+                  <input type="text" className="form-control" id="phone_number" placeholder="Phone number (optional)" onChange={this.handleFormChange}/>
                 </div>
-                <button type="submit" className={"signuoForm--submit " + validFormClasses} onClick={this.handleSubmit}>Join the waitlist</button>
+                <button type="submit" className={"signupForm--submit " + validFormClasses} onClick={this.handleSubmit}>Join the waitlist</button>
               </form>
             </div>
         );
