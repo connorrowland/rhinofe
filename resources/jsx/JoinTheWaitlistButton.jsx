@@ -10,7 +10,7 @@ class Navbar extends React.Component {
     render() {
       return (
         <div>
-          <button onClick={this.navigateToSignup} class="home--waitlist-button-desktop">
+          <button onClick={this.navigateToSignup} className="home--waitlist-button-desktop">
             Join the waitlist
           </button>
         </div>
