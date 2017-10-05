@@ -21,11 +21,12 @@ class SignupForm extends React.Component {
     }
 
     handleSubmit(data){
+      var cleanPhoneNum = this.state.phoneNumber.replace(/\D/g,'');
       var signUpData = {
         'full_name':this.state.name,
         'company_name': this.state.companyName,
         'email': this.state.email,
-        'phone_number': this.state.phoneNumber
+        'phone_number': cleanPhoneNum
       }
 
       $.ajax({
@@ -52,6 +53,21 @@ class SignupForm extends React.Component {
       })
       if(event.target.id == "email"){
         this.validateEmail(event.target.value);
+      }
+      if(event.target.id == "phone_number"){
+        var input = event.target.value.replace(/\D/g,'');
+        console.log(input);
+        input = input.substring(0,10);
+        var size = input.length;
+        if(size == 0){
+          event.target.value = input;
+        }else if(size < 4){
+          event.target.value = '('+input;
+        }else if(size < 7){
+          event.target.value = '('+input.substring(0,3)+') '+input.substring(3,6);
+        }else{
+          event.target.value = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
+        }
       }
     }
 
@@ -99,7 +115,7 @@ class SignupForm extends React.Component {
                   <input type="email" className={errorFormClass} id="email" placeholder="Enter email" onFocus={this.handleFocus} onChange={this.handleFormChange}/>
                 </div>
                 <div className="form-group">
-                  <input type="text" className="form-control" id="phone_number" placeholder="Phone number (optional)" onChange={this.handleFormChange}/>
+                  <input type="tel" pattern="[0-9]*" className="form-control" id="phone_number" placeholder="Phone number (optional)" onChange={this.handleFormChange}/>
                 </div>
                 <button type="submit" className={"signupForm--submit " + validFormClasses} onClick={this.handleSubmit}>Join the waitlist</button>
               </form>

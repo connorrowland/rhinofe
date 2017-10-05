@@ -52,6 +52,13 @@ button{
   border: none;
   border-radius: 3px;
   background-color: @dkblue;
+  transition: background-color 0.3s ease-in-out;
+}
+button:hover{
+  background-color: #303486;
+}
+button:focus{
+  background-color: #20235C;
 }
 a{
   font-family: 'SharpSans-Semibold', Arial, Helvetica, sans-serif;
@@ -79,6 +86,12 @@ header{
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.error-message--text-input{
+  color: @red_error;
+  letter-spacing: 0.8px;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
 .text-input--error{
   border-color: #D5D5D5;
 }
@@ -95,12 +108,21 @@ header{
   z-index: 99;
   background: #f7feff;
   border: 1px solid transparent;
+  transition: box-shadow 0.3s ease-in-out;
 }
 .header-navbar--inner{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 17px 30px;
+  @media (max-width: 575px) {
+    padding: 15px 20px;
+  }
+}
+.header-navbar--shadow{
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
 }
 .header-navbar--logo-menu{
   display: flex;
@@ -127,12 +149,12 @@ header{
   }
   div{
     width: 24px;
-    height: 3.63px;
-    border-radius: 5px;
+    height: 3px;
+    border-radius: 1.5px;
     background-color: #1A1A1B;
     margin-bottom: 4px;
+    display: block;
     @media (max-width: 575px) {
-      height: 2.6px;
       width: 17px;
       margin-bottom: 3px;
     }
