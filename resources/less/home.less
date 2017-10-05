@@ -81,19 +81,22 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-image: url("/images/Header_Background.png");
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-image: url(/images/Header_Background.png);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 500px;
-  background-position-y: 85%;
+  min-height: 475px;
+  background-position-y: bottom;
+  @media (max-width: 1099px) {
+    background-position-y: 170%;
+  }
   @media (max-width: 992px) {
     background-image: none;
     min-height: initial;
@@ -363,9 +366,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
   margin-top: 50px;
   @media (max-width: 575px) {
     flex-direction: column;
