@@ -1,4 +1,21 @@
-@import "./variables.less";
+/* Put your CSS code in the left column, instead of example, to put or remove unnecessary prefixes. */
+
+.example {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+    background: -webkit-linear-gradient(top, white, black);
+    background: -o-linear-gradient(top, white, black);
+    background: linear-gradient(to bottom, white, black);
+}@import "./variables.less";
 .section-wave{
   width: 100%;
   height: auto;
@@ -144,15 +161,30 @@
     text-decoration: none;
   }
   @media (max-width: 575px) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 50px;
   }
 }
+.home--introduction{
+  margin-top: 75px;
+}
 .introduction--container{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .introduction--text{
   p{
@@ -173,7 +205,10 @@
   text-align: center;
   margin-top: 40px;
   @media (max-width: 991px) {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .introduction--trio-item{
@@ -197,7 +232,7 @@
 .home--how-it-works{
   background-color: #F7FEFF;
   margin-bottom: 0;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   margin-top: 0;
   @media (max-width: 575px) {
     padding-bottom: 40px;
@@ -317,7 +352,7 @@
 }
 .faq--intro-text{
   margin-top: 90px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   h2{
     color: @dkblue;
     margin-left: 0;
@@ -371,8 +406,14 @@
           align-items: flex-start;
   margin-top: 50px;
   @media (max-width: 575px) {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-top: 65px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #logo-trio--fortune{
     width: 195px;
@@ -428,8 +469,13 @@
   max-width: 555px;
   margin-top: 40px;
   @media (max-width: 575px) {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     max-width: 300px;
     padding: 28px 40px;
   }
@@ -501,7 +547,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   @media (max-width: 575px) {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .footer-column-group--column{
     list-style: none;
@@ -539,7 +588,10 @@
   margin-top: 130px;
   @media (max-width: 575px) {
     margin-top: 50px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .legal-text--column{
     width: 48%;
