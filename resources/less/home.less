@@ -42,7 +42,7 @@
 }
 .home--header{
   text-align: center;
-  padding-top: 160px;
+  padding-top: 130px;
   background-color: #F7FEFF;
   @media (max-width: 575px) {
     padding-top: 100px;
@@ -217,6 +217,7 @@
     max-width: 250px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 36px;
     @media (max-width: 991px) {
       font-size: 30px;
       max-width: none; 
@@ -252,6 +253,13 @@
 }
 .steps--step1{
   max-width: 540px;
+  .steps--title{
+    @media (max-width: 575px) {
+      max-width: 334px;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
   p{
     margin-left: 70px;
     @media (max-width: 575px) {
@@ -296,6 +304,7 @@
     z-index: 10;
     @media (max-width: 575px) {
       letter-spacing: 0.3px;
+      font-size: 40px;
     }
   }
 }
@@ -345,13 +354,16 @@
   position: relative;
   top: -3px;
   margin-bottom: 0;
+  @media (max-width: 575px) {
+    padding-top: 50px;
+  }
 }
 .faq--bottom-wave{
   position: relative;
   top: -6px;
 }
 .faq--intro-text{
-  margin-top: 90px;
+  margin-top: 0;
   margin-bottom: 50px;
   h2{
     color: @dkblue;
@@ -379,7 +391,7 @@
   }
 }
 .home--press{
-  margin-top: 75px;
+  margin-top: 70px;
   margin-bottom: 75px;
 }
 .press--intro-text{
@@ -476,8 +488,8 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    max-width: 300px;
-    padding: 28px 40px;
+    max-width: 275px;
+    padding: 28px 20px;
   }
   p{
     margin: 0;
