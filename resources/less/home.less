@@ -380,10 +380,12 @@
   letter-spacing: 0.34px;
   line-height: 36px;
   margin-bottom: 30px;
-  margin-right: 50px;
+  margin-right: 0;
+  @media (min-width: 1200px) {
+    margin-right: 50px;
+  }
   @media (max-width: 575px) {
     margin-bottom: 20px;
-    margin-right: 0;
   }
 }
 .home--press{
