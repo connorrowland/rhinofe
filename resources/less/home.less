@@ -202,6 +202,10 @@
       font-size: 27px;
       max-width: none; 
     }
+    @media (max-width: 575px) {
+      font-size: 25px;
+      max-width: none; 
+    }
   }
   .break-line{
     display: block;
@@ -417,6 +421,12 @@
       -ms-flex-align: flex-start;
           align-items: flex-start;
   margin-top: 50px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 1200px) {
+    max-width: 80%;
+  }
   img{
     @media (max-width: 992px) {
       max-width: 70%;
