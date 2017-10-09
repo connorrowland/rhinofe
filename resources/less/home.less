@@ -75,7 +75,6 @@
     display: inline;
   }
 }
-
 .header--city{
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,36 +92,24 @@
   background-image: url("/images/Header_Background.png");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 475px;
   background-position-y: bottom;
-  @media (min-width: 1551px){
-    min-height: 515px;
-  }
-  @media (max-width: 1550px) and (min-width: 1099px){
-    min-height: 435px;
-  }
-  @media (max-width: 1099px) {
-    background-position-y: 170%;
+  padding-bottom: 100px;
+  @media (min-width: 1099px){
+    padding-bottom: 150px;
   }
   @media (max-width: 992px) {
-    background-image: none;
-    min-height: initial;
-    position: relative;
-    top: -5px;
+    padding-bottom: 90px;
+  }
+  @media (max-width: 575px) {
+    padding-bottom: 50px;
   }
   #header--city-left{
     width: 47%;
     height: auto;
-    @media (max-width: 992px) {
-      display: none;
-    }
   }
   #header--city-right{
     width: 49%;
     height: auto;
-    @media (max-width: 992px) {
-      display: none;
-    }
   }
   #header--city-mobile{
     display: none;
@@ -365,10 +352,18 @@
   }
 }
 .faq--trios{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   @media (max-width: 575px) {
     margin-bottom: 80px;
   }
@@ -426,8 +421,13 @@
     }
   }
   @media (max-width: 992px) {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   @media (max-width: 575px) {
     -webkit-box-orient: vertical;
