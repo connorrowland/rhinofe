@@ -32,8 +32,8 @@ class Navbar extends React.Component {
               <button onClick={this.navigateToSignup} className="header--waitlist-button-desktop">
                 Join the waitlist
               </button>
-              <button className="header--waitlist-button-mobile">
-                Get pricing
+              <button onClick={this.navigateToSignup} className="header--waitlist-button-mobile">
+                Join the waitlist
               </button>
             </div>
           </div>
